@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import { nanoid } from "nanoid";
 import React from "react";
 import { createContext, useState } from "react";
 
@@ -25,7 +25,7 @@ export const FeedbackProvider = ({ children }) => {
 
   // add feedback
   const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4();
+    newFeedback.id = nanoid();
     setFeedback([newFeedback, ...feedback]);
   };
 
